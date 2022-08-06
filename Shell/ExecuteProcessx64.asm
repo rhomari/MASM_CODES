@@ -21,3 +21,4 @@ call    ShellExecuteA
 main ENDP
 
 END
+; ml64 ExecuteProcessx64.asm /link /subsystem:windows /machine:x64 /entry:main /out:ExecuteProcessx64.exe  

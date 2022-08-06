@@ -27,3 +27,4 @@ main PROC
    
 main ENDP
 END
+;ml64 masm_array.asm  /link /subsystem:windows /machine:x64 /entry:main /out:masm_array.exe

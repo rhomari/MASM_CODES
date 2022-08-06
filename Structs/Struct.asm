@@ -24,3 +24,4 @@ SetX PROC
 SetX ENDP
 
 END
+;ml64 Struct.asm /link /subsystem:windows /machine:x64 /entry:main /out:struct.exe  

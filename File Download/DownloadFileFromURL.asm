@@ -1,4 +1,4 @@
-INCLUDELIB C:\libs\x64\kernel32.lib
+INCLUDELIB C:\libs\x64\kernel32.lib ;change to your lib folder
 INCLUDELIB C:\libs\x64\urlmon.lib
 ExitProcess PROTO
 URLDownloadToFileA PROTO
@@ -25,3 +25,4 @@ main PROC
 main ENDP
 END
 
+;ml64 DownloadFileFromURL.asm  /link /subsystem:windows /machine:x64 /entry:main /out:DownloadFileFromURL.exe

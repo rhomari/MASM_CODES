@@ -32,3 +32,4 @@ main PROC
 
 main ENDP
 END
+; ml64 consolewrite.asm /link /subsystem:windows /machine:x64 /entry:main /out:consolewrite.exe  

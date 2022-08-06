@@ -57,3 +57,4 @@ ret
 main ENDP
 
 END
+;ml /coff ExecuteProcess.asm -link /subsystem:console /entry:main 
