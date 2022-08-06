@@ -2,6 +2,7 @@ INCLUDELIB C:\libs\x64\kernel32.lib
 INCLUDELIB C:\libs\x64\user32.lib
 GetStdHandle PROTO
 WriteConsoleA PROTO
+SetConsoleTextAttribute PROTO
 ExitProcess PROTO
 
 .DATA
@@ -9,6 +10,7 @@ stdout equ -11
 chandle QWORD ?
 text BYTE "texte",0
 NUM QWORD ?
+COLOR DWORD 4
 .CODE
 
 main PROC
@@ -20,7 +22,10 @@ main PROC
     SUB RSP,40
     MOV RCX, stdout
     CALL GetStdHandle
-    MOV chandle,RAX
+    MOV Chandle, RAX
+    MOV EDX, COLOR
+    MOV RCX,chandle
+    CALL SetConsoleTextAttribute
     MOV RCX,chandle
     LEA RDX,text
     MOV R8, LENGTHOF text
@@ -31,5 +36,6 @@ main PROC
     CALL ExitProcess
 
 main ENDP
+
 END
-; ml64 consolewrite.asm /link /subsystem:windows /machine:x64 /entry:main /out:consolewrite.exe  
+; ml64 consolewrite.asm /link /subsystem:console /machine:x64 /entry:main /out:consolewrite.exe  
